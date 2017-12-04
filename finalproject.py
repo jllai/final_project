@@ -89,12 +89,13 @@ for i in range(len(all_users)):
 	all_users[i] = all_users[i].lower()
 
 name_lst = client1.open("File to de-duplicate").sheet1
+
 for ppl in new_user[1:]:
 	ppl = ppl.lower()
 	if ppl in all_users:
 		name_lst.delete_row(new_user.index(ppl) + 1)
 
-
+name_lst.close()
 
 
 
